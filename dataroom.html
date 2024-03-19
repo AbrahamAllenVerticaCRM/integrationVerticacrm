@@ -1,0 +1,114 @@
+<bbcrm api_string="loginbar"> </bbcrm>
+<div id = 'main'></div>
+<bbcrm api_string="dataroom"> </bbcrm>
+<style>#bbcrm-loginbar, #bbcrm-dataroom, #bbcrm-logged-in-bar, #formmenu{display: none;}</style>
+
+
+	<style>
+	    #main{
+	        width: 100%;
+	    }
+	    
+	    .elementor-element-f432a06{
+            background-color: #0549a3 !important;
+        }
+		.text-success{
+			color: #0549a3;
+			font-size: 20px; 
+			font-weight: bold;
+		}
+		
+		.text-primary{
+		    color: #0549a3;
+			font-size: 20px; 
+			font-weight: bold;
+		}
+		
+		.text-dark{
+		    color: black;
+		    font-size: 14px;
+		}
+		
+		.btn{
+		    display: block;
+		    font-size: 20px;
+            padding: 5px 15px;
+            color: white;
+            background-color: #0549a3;
+            border-sytle: solid;
+            border-color: #0549a3;
+            margin: auto;
+		}
+		
+		.btn:hover{
+		    background-color: white;
+		    color: #0549a3;
+		    border-color: #0549a3;
+		    border-width: 3px;
+		}
+		
+		
+		.checkbox{
+		    color: black;
+		    font-size: 14px;
+		    line-height: 22px;
+		    display: none;
+		}
+		
+		.display-1{
+		    color: black;
+		}
+		
+		.continueToRegisterNDA{
+			
+		}
+		
+		.returningCustomer{
+		    background-color: white !important;
+		    border-style: none !important;
+		}
+		
+		.input-group-addon{
+            display: none;
+        }
+	    .input-group{
+		    width:90%;
+		    float: left;
+    		margin: 10px !important; 
+	    	border-bottom: solid 1px grey;
+	    }
+	
+    	.form-control{
+    		border-style: none !important;
+    		border-radius: 10px !important;
+    		-webkit-box-shadow: none;
+            box-shadow: none;
+            margin-left: 0px;
+            opacity: .7;
+    	}
+    	
+    	.bbcrm_login_forgotPwd{
+    	    display: none;
+    	}
+    	
+    	#logout{
+    	    position: absolute;
+            top: -50px;
+        }
+    	
+	</style>
+	
+	<script>
+	    let place = setInterval(function(){if(document.getElementById('bbcrm-dataroom')){
+	        document.getElementById('main').appendChild(document.getElementById('logout'));
+	        
+	        for(let x of document.getElementsByClassName('main')){
+	            document.getElementById('main').appendChild(x)
+	        };
+  
+	        
+	        clearInterval(place);
+	    }else{console.log('wait')}}, 500)
+	    
+
+</script>
