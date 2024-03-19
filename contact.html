@@ -1,0 +1,66 @@
+<bbcrm api_string="contactform"> </bbcrm>
+
+<style>
+
+    .btn{
+		    display: block;
+		    font-size: 20px;
+            padding: 5px 15px;
+            color: white;
+            background-color: #c11f15;
+            border-sytle: solid;
+            border-color: #c11f15;
+            margin: auto;
+		}
+		
+		.btn:hover{
+		    background-color: white;
+		    color: #c11f15;
+		    border-color: #c11f15;
+		    border-width: 3px;
+		}
+
+    .form-horizontal{
+        max-width: 2000px !important;
+    }
+    
+    .control-label{
+        text-align: left !important;
+            color: grey;
+    font-weight: 500;
+    margin-bottom: 15px !important;
+    }
+    .form-group {
+       
+    }
+    
+    .form-control{
+            height: 40px;
+    }
+    
+    .col-sm-9 {
+        width: 100% !important;
+    }
+    
+    .col-sm-3 {
+        
+    }
+
+</style>
+
+<script>
+let pha = setInterval(function(){
+if(document.getElementById('contact-form')){
+	for(let field of document.getElementsByClassName('form-control')){
+    if(field.type != 'select-one'){
+    	field.placeholder = field.value;
+    	field.value = '';
+    }else{
+      
+    }
+	
+  }
+clearInterval(pha);
+}}, 500)
+    
+</script>
