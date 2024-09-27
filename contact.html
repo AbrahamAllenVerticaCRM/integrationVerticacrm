@@ -7,16 +7,19 @@
 		    font-size: 20px;
             padding: 5px 15px;
             color: white;
-            background-color: #c11f15;
-            border-sytle: solid;
-            border-color: #c11f15;
-            margin: auto;
+            background-color: #1b223f;
+            border-style: solid;
+            border-color: #1b223f;
+            
+            float: left;
+            width: 50%;
+            margin-left: 25%;
 		}
 		
 		.btn:hover{
 		    background-color: white;
-		    color: #c11f15;
-		    border-color: #c11f15;
+		    color: #1b223f;
+		    border-color: #1b223f;
 		    border-width: 3px;
 		}
 
@@ -25,17 +28,21 @@
     }
     
     .control-label{
+        display: none;
         text-align: left !important;
             color: grey;
     font-weight: 500;
     margin-bottom: 15px !important;
     }
     .form-group {
-       
+       float:left; 
+       width: 48%;
+       margin: 1% !important;
     }
     
     .form-control{
             height: 40px;
+            border-radius: 0px !important;
     }
     
     .col-sm-9 {
@@ -45,6 +52,16 @@
     .col-sm-3 {
         
     }
+    
+    #field_c_address, #field_c_city, #field_c_state, #field_c_postalcode, #field_c_country{
+        display:none;
+    }
+    
+    #field_c_message{
+        width: 98% !important;
+        margin: 1% !important;
+        height: 100px;
+    } 
 
 </style>
 
@@ -52,8 +69,8 @@
 let pha = setInterval(function(){
 if(document.getElementById('contact-form')){
 	for(let field of document.getElementsByClassName('form-control')){
-    if(field.type != 'select-one'){
-    	field.placeholder = field.value;
+    if(field.type != 'select-one' && field.value == ''){
+    	field.placeholder = field.parentNode.previousSibling.innerText.replace(':* ', '');
     	field.value = '';
     }else{
       
