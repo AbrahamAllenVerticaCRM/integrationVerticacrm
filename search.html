@@ -1,4 +1,8 @@
 <bbcrm api_string="sidebarsearchtool"> </bbcrm>
 <bbcrm api_string="submitsearchtoolnew" sort='createDate:desc' presets="c_sales_stage:=:Active"> </bbcrm> 
 <input type="hidden" id="presets" value="c_sales_stage:=:Active">
-<script>setInterval(()=>{let e=document.getElementsByClassName('pagination');if(e.length>1){e[0].remove()}},1e3)</script>
+<style>.pagination{display: none;}</style>
+<div style="float: left; clear: left; width: 50%;">
+<span class="previous btn" onclick="bbcrm_search_previous( jQuery(this) )" style="">PREVIOUS</span>
+<span class="next btn" onclick="bbcrm_search_next( jQuery(this) )">NEXT</span>
+</div>
