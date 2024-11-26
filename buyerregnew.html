@@ -1,0 +1,102 @@
+<bbcrm api_string="buyerregistration"> </bbcrm>
+<style>
+
+    .btn{
+		    display: block;
+		    font-size: 20px;
+            padding: 5px 15px;
+            color: white !important;
+            background-color: #183c4e;
+            border-sytle: solid;
+            border-color: #183c4e;
+            margin: auto;
+		}
+		
+		.btn:hover{
+		    background-color: white;
+		    color: black !important;
+		    border-color: #183c4e;
+		    border-width: 3px;
+		}
+
+    .form-horizontal{
+        max-width: 2000px !important;
+    }
+    
+    .control-label{
+        text-align: left !important;
+            color: grey;
+    font-weight: 500;
+    margin-bottom: 15px !important;
+    font-size: 18px;
+    width: 100%;
+    }
+    .form-group {
+       width: 45%;
+       float: left;
+       margin-right: 2.5% !important;
+    }
+    
+   #field_address{
+        width: 90%;
+    }
+    
+    .form-control{
+            height: 40px;
+    }
+    
+    .col-sm-9 {
+        width: 100% !important;
+    }
+    
+    .col-sm-3 {
+        
+    }
+    
+    #field_c_listing, #buyer-registration, #nolist{display: none;}
+    
+    #bbcrm-nda{float:left;}
+
+</style>
+
+<script>
+let pha = setInterval(function(){
+if(document.getElementById('buyer-registration')){
+    
+let l = [];
+l.push(window.location.href.split('=')[1]);
+l.push(document.getElementsByClassName('form-horizontal')[0].id);
+if(l[0]){bbcrm_getNDA_same_page(l)}else{document.getElementById('nolist').style.display = 'block'}
+    
+
+clearInterval(pha);
+}}, 500)
+let ndascroll = setInterval(function(){
+  
+    document.getElementById('bbcrm-nda').scrollBy(0, 1000);
+    document.getElementById('bbcrm-nda').style.height = 'auto';
+    document.getElementById('bbcrm-nda').style.overflow = 'hidden';
+    document.getElementById('buyer-registration').style.display = 'block';
+     document.getElementById('bbcrm-reg-accept').style.display = 'block';
+    document.getElementById('accept-sig').addEventListener('change', popnda);
+    document.getElementById('signaturebox').children[1].style.color = 'white';
+},500);
+  
+  setInterval(function(){
+      let i = 0;
+      for(let f of document.getElementsByClassName('form-control')){
+          if(f.value == ''){break}
+          else{i++}}
+          if(i > 11){jQuery('#bbcrm-buyer-registration-submit').show()}},500);
+          
+  
+  
+
+          
+function popnda(div){
+    document.getElementById('namepop').innerText = ' '+document.getElementById('accept-sig').value;
+}
+    
+</script>
+
+<a href='/search'><h2 id='nolist'>You have not selected a listing to sign an NDA for. Click here to view our listings. </h2></a>
