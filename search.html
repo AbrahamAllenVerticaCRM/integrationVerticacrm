@@ -1,8 +1,38 @@
-<bbcrm api_string="sidebarsearchtool"> </bbcrm>
-<bbcrm api_string="submitsearchtoolnew" sort='createDate:desc' presets="c_sales_stage:=:Active"> </bbcrm> 
+<div id='templatebutton' onclick='switchtemplate()'>🗘</div>
+<bbcrm id='listings' api_string="submitsearchtoolnew" template='snlres.html' sort='createDate:desc' presets="c_sales_stage:=:Active"> </bbcrm> 
 <input type="hidden" id="presets" value="c_sales_stage:=:Active">
-<style>.pagination{display: none;}</style>
+<style>.pagination, .listingcount{display: none;}
+#templatebutton{
+    position: fixed;
+    top: 150px;
+    right: 150px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    color: lightblue;
+    font-size: 50px;
+    background: grey;
+    line-height: 45px;
+    cursor: pointer;
+    user-select: none;
+}
+</style>
 <div style="float: left; clear: left; width: 50%;">
 <span class="previous btn" onclick="bbcrm_search_previous( jQuery(this) )" style="">PREVIOUS</span>
 <span class="next btn" onclick="bbcrm_search_next( jQuery(this) )">NEXT</span>
 </div>
+
+<script>
+
+function switchtemplate(){
+    document.getElementsByClassName('bbcrm-window')[0].remove();
+    if(document.getElementById('listings').getAttribute('template') == 'snlres.html'){
+        document.getElementById('listings').setAttribute('template', 'gridview.html')
+        }else{
+            document.getElementById('listings').setAttribute('template', 'snlres.html')
+        }
+        
+        processTag(jQuery("#listings"))
+        
+    }
+</script>
